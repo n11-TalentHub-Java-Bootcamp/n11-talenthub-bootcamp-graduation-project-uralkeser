@@ -1,0 +1,27 @@
+#navbar{
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#navbar-buttons{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+
+#navbar button{
+  border: none;
+  background: none;
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+#navbar button:hover {
+  text-decoration: underline;
+  color: #ea222f;
+}
