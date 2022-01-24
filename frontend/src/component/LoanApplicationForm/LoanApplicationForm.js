@@ -1,17 +1,20 @@
+import AppConfig from "../../config/AppConfig";
 import FormItem from "../FormItem/FormItem";
 
 const ApplicationForm = (props) =>{
+
   return(
-    <form className="application-form" onSubmit={props.onSubmit}>
+    <form id="customer-form" onSubmit={props.onSubmit}>
       {
         props.formItems.map((element)=>{
           return (
-            <FormItem key={element} field={element} />
+            <FormItem key={element} field={element} handleInputChange={props.onChange} />
           )
         })
       }
-      <input type="submit" value="Başvuru Yap" />
+      <input type="submit" value={AppConfig.applyButton} />
     </form>
+      
   );
 }
 
