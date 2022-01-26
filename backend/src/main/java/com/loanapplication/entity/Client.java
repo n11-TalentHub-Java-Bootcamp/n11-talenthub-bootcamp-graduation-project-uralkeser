@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @Entity
@@ -31,9 +31,8 @@ public class Client {
     private String mobileNumber;
 
     @Column(name = "birthdate",nullable = false, updatable = false)
-    @Temporal(TemporalType.DATE)
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private Date birthdate;
+    private LocalDate birthdate;
 
     @Column(name = "income",nullable = false, precision = 19, scale = 2)
     private BigDecimal income;

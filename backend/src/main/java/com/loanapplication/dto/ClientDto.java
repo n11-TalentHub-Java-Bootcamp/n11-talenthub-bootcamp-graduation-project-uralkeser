@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -14,7 +14,7 @@ public class ClientDto {
     private Long ssn;
     private String fullName;
     private String mobileNumber;
-    private Date birthdate;
+    private LocalDate birthdate;
     private BigDecimal income;
     private BigDecimal deposit;
 
