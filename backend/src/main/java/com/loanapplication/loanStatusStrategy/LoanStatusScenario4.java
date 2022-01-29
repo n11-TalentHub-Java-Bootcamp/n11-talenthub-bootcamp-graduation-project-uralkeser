@@ -8,18 +8,29 @@ import com.loanapplication.enums.LoanApplicationStatus;
 import com.loanapplication.enums.LoanLimitMultiplier;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Date;
 
 public class LoanStatusScenario4 implements LoanStatusScenario {
-    public LoanApplication createLoanApplication(Client client, LoanApplicationDto loanApplicationDto){
-        LoanApplication loanApplication = LoanApplicationConverter.INSTANCE.convertLoanApplicationDtoToLoanApplication(loanApplicationDto);
+    public LoanApplication createLoanApplication(Client client){
         BigDecimal loanAmount = client.getIncome().multiply(LoanLimitMultiplier.HALF.getAmount());
 
         if( client.getDeposit().compareTo(new BigDecimal(0)) == 1 ){ //deposit > 0
-            loanAmount = loanAmount.add(client.getDeposit().multiply(new BigDecimal(0.25))); // loanAmount = income * 2 + 0.25 * deposit
+            loanAmount = loanAmount.add(client.getDeposit().multiply(new BigDecimal(0.25))).setScale(2, RoundingMode.HALF_UP); // loanAmount = income * 2 + 0.25 * deposit
         }
 
-        loanApplication.setLoanAmount(loanAmount);
-        loanApplication.setStatus(LoanApplicationStatus.APPROVED.getStatus());
+        return loanApplicationBuilder(client, loanAmount);
+    }
+
+    private LoanApplication loanApplicationBuilder(Client client,BigDecimal loanAmount ){
+
+        LoanApplication loanApplication = LoanApplication
+                .builder()
+                .client(client)
+                .loanAmount(loanAmount)
+                .applicationDate(new Date())
+                .status(LoanApplicationStatus.APPROVED.getStatus())
+                .build();
 
         return loanApplication;
     }

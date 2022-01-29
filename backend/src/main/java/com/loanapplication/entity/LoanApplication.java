@@ -17,6 +17,7 @@ import java.util.Date;
 @Table
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class LoanApplication {
 
     @Id

@@ -7,18 +7,29 @@ import com.loanapplication.entity.LoanApplication;
 import com.loanapplication.enums.LoanApplicationStatus;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Date;
 
 public class LoanStatusScenario3 implements LoanStatusScenario {
-    public LoanApplication createLoanApplication(Client client, LoanApplicationDto loanApplicationDto){
-        LoanApplication loanApplication = LoanApplicationConverter.INSTANCE.convertLoanApplicationDtoToLoanApplication(loanApplicationDto);
+    public LoanApplication createLoanApplication(Client client){
         BigDecimal loanAmount = new BigDecimal(20000);
 
         if( client.getDeposit().compareTo(new BigDecimal(0)) == 1 ){ //deposit > 0
-            loanAmount = loanAmount.add(client.getDeposit().multiply(new BigDecimal(0.2))); // loanAmount = 20000 + 0.2 * deposit
+            loanAmount = loanAmount.add(client.getDeposit().multiply(new BigDecimal(0.2))).setScale(2, RoundingMode.HALF_UP); // loanAmount = 20000 + 0.2 * deposit
         }
 
-        loanApplication.setLoanAmount(loanAmount);
-        loanApplication.setStatus(LoanApplicationStatus.APPROVED.getStatus());
+        return loanApplicationBuilder(client, loanAmount);
+    }
+
+    private LoanApplication loanApplicationBuilder(Client client,BigDecimal loanAmount ){
+
+        LoanApplication loanApplication = LoanApplication
+                .builder()
+                .client(client)
+                .loanAmount(loanAmount)
+                .applicationDate(new Date())
+                .status(LoanApplicationStatus.APPROVED.getStatus())
+                .build();
 
         return loanApplication;
     }

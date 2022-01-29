@@ -1,0 +1,27 @@
+"2022-01-29 18:43:37 [restartedMain] INFO  c.l.LoanapplicationApplication - Starting LoanapplicationApplication using Java 11.0.12 on DESKTOP-OV56V36 with PID 6940 (C:\DEV\java bootcamp\final_project\n11-talenthub-bootcamp-graduation-project-uralkeser\backend\target\classes started by ural_ in C:\DEV\java bootcamp\final_project\n11-talenthub-bootcamp-graduation-project-uralkeser\backend)
+""2022-01-29 18:43:37 [restartedMain] INFO  c.l.LoanapplicationApplication - No active profile set, falling back to default profiles: default
+""2022-01-29 18:43:38 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-01-29 18:43:38 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+""2022-01-29 18:43:38 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-01-29 18:43:39 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-01-29 18:43:39 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.4.Final
+""2022-01-29 18:43:39 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-01-29 18:43:39 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-01-29 18:43:39 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-01-29 18:43:39 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+""2022-01-29 18:43:40 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+""2022-01-29 18:43:40 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "loan_application" does not exist, skipping
+""2022-01-29 18:43:40 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+""2022-01-29 18:43:40 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "client" does not exist, skipping
+""2022-01-29 18:43:40 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+""2022-01-29 18:43:40 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "loan_application" does not exist, skipping
+""2022-01-29 18:43:40 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+""2022-01-29 18:43:40 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - sequence "hibernate_sequence" does not exist, skipping
+""2022-01-29 18:43:40 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-01-29 18:43:41 [restartedMain] INFO  c.l.LoanapplicationApplication - Started LoanapplicationApplication in 4.857 seconds (JVM running for 6.285)
+""2022-01-29 18:43:51 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-01-29 18:43:51 [http-nio-8080-exec-2] INFO  c.l.service.ClientService - 05314467833 numaraya20024.60limitlikredi sonucuonay olarakgönderildi.
+""2022-01-29 18:44:00 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+""2022-01-29 18:44:00 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-01-29 18:44:00 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+"

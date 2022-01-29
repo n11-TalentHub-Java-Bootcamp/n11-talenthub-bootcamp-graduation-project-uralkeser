@@ -60,10 +60,9 @@ public class ClientService {
 
     public ClientDto saveNewClientAndLoanApplication(ClientDto clientDto){
 
-
+        // check client if exist
         Optional<Client> optionalClient = clientRepository.getClientBySsn(clientDto.getSsn());
-
-        if(validationService.isClientExist(optionalClient)) {//TODO
+        if(validationService.isClientExist(optionalClient)) {
             throw  new ClientHasAcceptedLoanApplicationException(ExceptionMessage.ClientHasAcceptedLoanApplicationException.getContent());
         }
 
@@ -76,18 +75,13 @@ public class ClientService {
         // decide Loan Status Strategy
         decideLoanStatusStrategy(client);
 
-        // build LoanApplicationDto with clientId and today's date
-        LoanApplicationDto loanApplicationDto = LoanApplicationDto
-                .builder()
-                .clientId(client.getId())
-                .applicationDate(new Date())
-                .build();
 
         //create loanApplication according to loan status strategy
-        LoanApplication loanApplication = executeLoanStatusStrategy(client, loanApplicationDto);
+        LoanApplication loanApplication = executeLoanStatusStrategy(client);
 
         // insert loan application into db
-        loanApplicationService.saveNewLoanApplication(loanApplication);
+        loanApplication = loanApplicationService.saveNewLoanApplication(loanApplication);
+
 
         sendSms(clientDto, loanApplication);
 
@@ -110,15 +104,8 @@ public class ClientService {
         // decide Loan Status Strategy
         decideLoanStatusStrategy(client);
 
-        // build LoanApplicationDto with clientId and today's date
-        LoanApplicationDto loanApplicationDto = LoanApplicationDto
-                .builder()
-                .clientId(client.getId())
-                .applicationDate(new Date())
-                .build();
-
         //create loanApplication according to loan status strategy
-        LoanApplication loanApplication = executeLoanStatusStrategy(client, loanApplicationDto);
+        LoanApplication loanApplication = executeLoanStatusStrategy(client);
 
         // insert loan application into db
         loanApplicationService.saveNewLoanApplication(loanApplication);
@@ -222,8 +209,8 @@ public class ClientService {
         this.loanStatusScenario = loanStatusScenario;
     }
 
-    private LoanApplication executeLoanStatusStrategy(Client client, LoanApplicationDto loanApplicationDto){ // returns loanApplication according to loan status strategy
-        return loanStatusScenario.createLoanApplication(client, loanApplicationDto);
+    private LoanApplication executeLoanStatusStrategy(Client client){ // returns loanApplication according to loan status strategy
+        return loanStatusScenario.createLoanApplication(client);
     }
 
     private void sendSms(ClientDto clientDto,LoanApplication loanApplication){ //TODO
