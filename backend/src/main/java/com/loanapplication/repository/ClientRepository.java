@@ -5,13 +5,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
-import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Client,Long> {
 
-    List<Client> getClientBySsn(Long ssn);
+    Optional<Client> getClientById(Long id);
 
-    List<Client> getClientBySsnAndBirthdate(Long ssn, LocalDate birthdate);
+    Optional<Client> getClientBySsn(Long ssn);
+
+    Optional<Client> getClientBySsnAndBirthdate(Long ssn, LocalDate birthdate);
 
 }
