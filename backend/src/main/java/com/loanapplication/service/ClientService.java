@@ -26,7 +26,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -81,8 +80,6 @@ public class ClientService {
 
         // insert loan application into db
         loanApplication = loanApplicationService.saveNewLoanApplication(loanApplication);
-
-        System.out.println(loanApplication);
 
         sendSms(clientDto, loanApplication);
 
@@ -145,17 +142,21 @@ public class ClientService {
                 .collect(Collectors.toList());
 
         if(loanApplicationList.isEmpty()){
+            log.info("the client does not have approved loan");
             return false;
         }
-
+        log.info("the client has approved loan");
         return true;
     }
 
     private Client saveNewClient(ClientDto clientDto, int clientCreditScore){
         Client client = ClientConverter.INSTANCE.convertClientDtoToClient(clientDto);
         client.setCreditScore(clientCreditScore);
+        client = clientRepository.save(client);
 
-        return clientRepository.save(client);
+        log.info("inserted new client into database");
+
+        return client;
     }
 
     private Client updateClient(Client client, UpdatableClientInfoDto updatableClientInfoDto){
@@ -164,10 +165,13 @@ public class ClientService {
         client.setCreditScore(getClientCreditScore(updatableClientInfoDto.getIncome()));
         client.setMobileNumber(updatableClientInfoDto.getMobileNumber());
 
-        return clientRepository.save(client);
+        log.info("updated the client in database.");
+
+        return client;
     }
 
     private int getClientCreditScore(BigDecimal income){
+        log.info("retrieved client's credit score.");
         if(income.compareTo(new BigDecimal(4500)) < 0){
             return 0;
         }
@@ -213,11 +217,12 @@ public class ClientService {
     }
 
     private LoanApplication executeLoanStatusStrategy(Client client){ // returns loanApplication according to loan status strategy
+        log.info("created loan application status and limit");
         return loanStatusScenario.createLoanApplication(client);
     }
 
     private void sendSms(ClientDto clientDto,LoanApplication loanApplication){ //TODO
-        log.info(clientDto.getMobileNumber()+" numaraya"+  loanApplication.getLoanAmount()+ "limitli" + "kredi sonucu"  +loanApplication.getStatus()+" olarak" +"gönderildi.");
+        log.info("\nSayın "+ clientDto.getFullName() + " kredi başvuru sonuç bilgileriniz:\n" + "Onay durumu: " + loanApplication.getStatus() + "\nLimit: " + loanApplication.getLoanAmount()+"\nşeklinde oluşturulmuştur.");
     }
 
 }
