@@ -32,7 +32,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
     }
 
     @ExceptionHandler
-    public final ResponseEntity<Object> handleClientInfoMismatchedException(ClientInfoMismatchedException ex, WebRequest webRequest) {
+    public final ResponseEntity<Object> handleClientAlreadyExistException(ClientAlreadyExistException ex, WebRequest webRequest) {
         log.error(ex.getMessage());
         return getErrorResponse(ex, webRequest, HttpStatus.NOT_FOUND);
     }

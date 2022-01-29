@@ -5,13 +5,16 @@ import com.loanapplication.dto.LoanApplicationDto;
 import com.loanapplication.entity.Client;
 import com.loanapplication.entity.LoanApplication;
 import com.loanapplication.enums.LoanApplicationStatus;
+import lombok.extern.slf4j.Slf4j;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Date;
 
+@Slf4j
 public class LoanStatusScenario3 implements LoanStatusScenario {
     public LoanApplication createLoanApplication(Client client){
+        log.warn("applied loan application scenario is: 3");
         BigDecimal loanAmount = new BigDecimal(20000);
 
         if( client.getDeposit().compareTo(new BigDecimal(0)) == 1 ){ //deposit > 0

@@ -30,13 +30,13 @@ public class ClientController {
     @PostMapping("")
     @Operation(summary = "save client and loan application")
     public ResponseEntity<LoanApplicationDto> saveNewClientAndLoanApplication(@RequestBody ClientDto clientDto){
-        return ResponseEntity.status(HttpStatus.CREATED).body(clientService.saveNewClientAndLoanApplication(clientDto));
+        return ResponseEntity.status(HttpStatus.CREATED).body(clientService.saveTransaction(clientDto));
     }
 
     @PutMapping("/{ssn}/{birthdate}")
     @Operation(summary = "update client and create new loan application")
     public ResponseEntity<LoanApplicationDto> updateClientAndCreateNewLoanApplication(@PathVariable("ssn") Long ssn, @PathVariable("birthdate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate birthdate, @RequestBody UpdatableClientInfoDto updatableClientInfoDto ){
-        return ResponseEntity.status(HttpStatus.OK).body(clientService.updateClientAndCreateNewLoanApplication(ssn, birthdate, updatableClientInfoDto));
+        return ResponseEntity.status(HttpStatus.OK).body(clientService.updateTransaction(ssn, birthdate, updatableClientInfoDto));
     }
 
     @DeleteMapping("{id}")
