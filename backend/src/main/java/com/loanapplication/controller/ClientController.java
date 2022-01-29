@@ -1,6 +1,7 @@
 package com.loanapplication.controller;
 
 import com.loanapplication.dto.ClientDto;
+import com.loanapplication.dto.LoanApplicationDto;
 import com.loanapplication.dto.UpdatableClientInfoDto;
 import com.loanapplication.entity.Client;
 import com.loanapplication.entity.LoanApplication;
@@ -28,13 +29,13 @@ public class ClientController {
 
     @PostMapping("")
     @Operation(summary = "save client and loan application")
-    public ResponseEntity<ClientDto> saveNewClientAndLoanApplication(@RequestBody ClientDto clientDto){
+    public ResponseEntity<LoanApplicationDto> saveNewClientAndLoanApplication(@RequestBody ClientDto clientDto){
         return ResponseEntity.status(HttpStatus.CREATED).body(clientService.saveNewClientAndLoanApplication(clientDto));
     }
 
     @PutMapping("/{ssn}/{birthdate}")
     @Operation(summary = "update client and create new loan application")
-    public ResponseEntity<ClientDto> updateClientAndCreateNewLoanApplication(@PathVariable("ssn") Long ssn, @PathVariable("birthdate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate birthdate, @RequestBody UpdatableClientInfoDto updatableClientInfoDto ){
+    public ResponseEntity<LoanApplicationDto> updateClientAndCreateNewLoanApplication(@PathVariable("ssn") Long ssn, @PathVariable("birthdate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate birthdate, @RequestBody UpdatableClientInfoDto updatableClientInfoDto ){
         return ResponseEntity.status(HttpStatus.OK).body(clientService.updateClientAndCreateNewLoanApplication(ssn, birthdate, updatableClientInfoDto));
     }
 
@@ -46,7 +47,7 @@ public class ClientController {
 
     @GetMapping("/loan-applications/{ssn}/{birthdate}")
     @Operation(summary = "show client's all loan applications")
-    public ResponseEntity<Optional<List<LoanApplication>>> getClientsLoanApplicationBySsnAndBirthdate(@PathVariable("ssn") Long ssn, @PathVariable("birthdate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate birthdate){
+    public ResponseEntity<List<LoanApplicationDto>> getClientsLoanApplicationBySsnAndBirthdate(@PathVariable("ssn") Long ssn, @PathVariable("birthdate") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate birthdate){
         return ResponseEntity.status(HttpStatus.OK).body(clientService.getClientsLoanApplicationBySsnAndBirthdate(ssn,birthdate));
     }
 

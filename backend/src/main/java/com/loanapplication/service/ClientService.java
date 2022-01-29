@@ -1,6 +1,7 @@
 package com.loanapplication.service;
 
 import com.loanapplication.converter.ClientConverter;
+import com.loanapplication.converter.LoanApplicationConverter;
 import com.loanapplication.dto.ClientDto;
 import com.loanapplication.dto.LoanApplicationDto;
 import com.loanapplication.dto.UpdatableClientInfoDto;
@@ -58,7 +59,7 @@ public class ClientService {
         return "Deletion is successful";
     }
 
-    public ClientDto saveNewClientAndLoanApplication(ClientDto clientDto){
+    public LoanApplicationDto saveNewClientAndLoanApplication(ClientDto clientDto){
 
         // check client if exist
         Optional<Client> optionalClient = clientRepository.getClientBySsn(clientDto.getSsn());
@@ -75,20 +76,20 @@ public class ClientService {
         // decide Loan Status Strategy
         decideLoanStatusStrategy(client);
 
-
         //create loanApplication according to loan status strategy
         LoanApplication loanApplication = executeLoanStatusStrategy(client);
 
         // insert loan application into db
         loanApplication = loanApplicationService.saveNewLoanApplication(loanApplication);
 
+        System.out.println(loanApplication);
 
         sendSms(clientDto, loanApplication);
 
-        return clientDto;
+        return LoanApplicationConverter.INSTANCE.convertLoanApplicationToLoanApplicationDto(loanApplication);
     }
 
-    public ClientDto updateClientAndCreateNewLoanApplication(Long ssn, LocalDate birthdate, UpdatableClientInfoDto updatableClientInfoDto){
+    public LoanApplicationDto updateClientAndCreateNewLoanApplication(Long ssn, LocalDate birthdate, UpdatableClientInfoDto updatableClientInfoDto){
 
         //updatableClientInfoDto formatı doğru geldi mi? bad.request exception
 
@@ -110,11 +111,11 @@ public class ClientService {
         // insert loan application into db
         loanApplicationService.saveNewLoanApplication(loanApplication);
 
-        //send SMS//TODO
-
         ClientDto clientDto = ClientConverter.INSTANCE.convertClientToClientDto(client);
 
-        return clientDto;
+        sendSms(clientDto, loanApplication);
+
+        return LoanApplicationConverter.INSTANCE.convertLoanApplicationToLoanApplicationDto(loanApplication);
 
     }
 
@@ -127,9 +128,11 @@ public class ClientService {
         return client;
     }
 
-    public Optional<List<LoanApplication>> getClientsLoanApplicationBySsnAndBirthdate(Long ssn, LocalDate birthdate){
+    public List<LoanApplicationDto> getClientsLoanApplicationBySsnAndBirthdate(Long ssn, LocalDate birthdate){
         Client client = getClientBySsnAndBirthdate(ssn,birthdate);
-        return loanApplicationService.getAllLoanApplicationsByClientId(client.getId());
+        Optional<List<LoanApplication>> optionalLoanApplicationList = loanApplicationService.getAllLoanApplicationsByClientId(client.getId());
+        List<LoanApplication> loanApplicationList = validationService.validateLoanApplicationList(optionalLoanApplicationList);
+        return LoanApplicationConverter.INSTANCE.convertLoanApplicationListToLoanApplicationDtoList(loanApplicationList);
     }
 
     private boolean doesClientHaveAnyApprovedLoan(Long clientId){
