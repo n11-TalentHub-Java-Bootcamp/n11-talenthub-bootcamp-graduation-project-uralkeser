@@ -12,7 +12,7 @@ This Project includes 4 basic operations (New Client Loan Application, Updated C
 ## Before Getting Started
 This Project has two implemented parts(frontend and backend). Before run them properly you need to download some technologies and make some configuration mentioned below. 
 
-### Fronted Prerequisites
+### Fronted Requirements
 Please download [Node.js](https://nodejs.org) first. After download Node.js open the project [directory](https://github.com/n11-TalentHub-Java-Bootcamp/n11-talenthub-bootcamp-graduation-project-uralkeser/tree/main/frontend) run this comment below to install node packages which are needed to run properly frontend part of the project.
 
   ```sh
@@ -24,31 +24,30 @@ After downloading packages you can simply run the comment in the same directory 
   npm start
   ```
 
-### Fronted Prerequisites
+### Backend Requirements
 
 ## Usage
 
-The users should select:
-"New User Loan Application" in order to make a loan application
-"My Application Result" in order to view the loan application result
-"Update my Information  and New Loan Application" in order to update their information whose loan application is not approved and who requests a new loan application
+### Frontend Usage
+To Apply Loan press "Yeni Kullanıcı Kredi Başvurusu" button and fill shown fields in opened window.
+To Get Results of Loan Applications  press "Başvuru Sonucum" button and fill shown fields in opened window.
+To Update Client infos and apply press Bilgilerimi Güncelle ve Yeni Başvuru button and fill shown fields in opened window.
+
+### Backend Usage
+You can test api using swagger documentation or postman collection in the directory named resources
+
 
 ### Tech
+[Java Spring Boot Framework](https://spring.io/projects/spring-boot)
+[PostgreSQL](https://www.postgresql.org/)
+[React.js](https://tr.reactjs.org/)
+[Swagger](https://swagger.io/)
 
-* [Java Spring Boot Framework](https://spring.io/projects/spring-boot)
-* [PostgreSQL](https://www.postgresql.org/)
-* [React.js](https://tr.reactjs.org/)
-* [Swagger](https://swagger.io/)
-
-<!-- LICENSE -->
 ## License
-
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
-<!-- CONTACT -->
 ## Contact
-
 Osman Ural Keser - [@linkedin](https://www.linkedin.com/in/osmanuralkeser/)  
 Gmail: osmanuralkeser@gmail.com
 

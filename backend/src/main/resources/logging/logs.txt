@@ -178,4 +178,5 @@ Onay durumu: red
 Limit: 0
 şeklinde oluşturulmuştur.
 ""2022-01-30 21:53:44 [http-nio-8080-exec-1] WARN  c.l.service.ClientService - call get all loan applications service by ssn:12568536779 and 1980-12-12
+""2022-01-30 22:51:58 [http-nio-8080-exec-7] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 327 ms
 "
