@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "996d7873-d422-4af8-9183-384a711e7d51",
+		"name": "LoanApplication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DeleteClient",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clients/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clients",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveClient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ssn\": 11122256789,\r\n    \"fullName\": \"Example Name\",\r\n    \"mobileNumber\": \"05324467833\",\r\n    \"birthdate\": \"1945-09-02\",\r\n    \"income\": 4000,\r\n    \"deposit\": 250\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateClient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"income\": 17000,\r\n    \"deposit\": 15000,\r\n    \"mobileNumber\": \"05537855917\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clients/11122256789/1945-09-02",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clients",
+						"11122256789",
+						"1945-09-02"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllLoanApplications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/clients/loan-applications/11122256789/1945-09-02",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"clients",
+						"loan-applications",
+						"11122256789",
+						"1945-09-02"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
