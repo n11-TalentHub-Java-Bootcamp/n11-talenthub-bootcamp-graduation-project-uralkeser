@@ -15,12 +15,39 @@ class LoanApplication extends React.Component {
   handleSubmit = (e) =>{
     e.preventDefault();
     console.log(this.state);
+    this.submitForm();
   }
+
+  submitForm = () => {
+
+    const uri = "http://localhost:8080/api/v1/clients";
+
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(this.state)
+    }
+
+    fetch(uri,requestOptions)
+      .then(response => {
+      if (response.ok) {
+        //change page
+      }
+      return response.json()})
+      .then( res =>  {
+        console.log(res);
+        console.log(res.status);
+      })
+      .catch(error => console.log(error));
+  }
+
 
   handleInputChange = (event) => {
     const target = event.target;
     const value = target.value;
-    const name = target.name;
+    const name = target.id;
 
     this.setState({
       [name]: value

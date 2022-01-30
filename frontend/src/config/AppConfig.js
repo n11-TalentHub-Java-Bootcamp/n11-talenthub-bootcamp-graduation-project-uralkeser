@@ -10,6 +10,13 @@ module.exports = {
     applyButton: "Başvuru Yap",
 
     //LOAN APPLICATON FIELDS
-    loanApplicationFields: ["Kimlik numarası", "ad-soyad", "aylık gelir", "telefon", "doğum tarihi" , "teminat"]
+    loanApplicationFields: [
+        {tr:"Kimlik numarası", eng: "ssn"}, 
+        {tr:"ad-soyad", eng:"fullName"}, 
+        {tr:"telefon", eng:"mobileNumber"}, 
+        {tr:"doğum tarihi", eng:"birthdate"} , 
+        {tr:"aylık gelir", eng:"income"}, 
+        {tr:"teminat", eng:"deposit"}
+    ]
     
 }

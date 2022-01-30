@@ -7,7 +7,7 @@ const FormItem = (props) =>{
         <label>{props.field}:</label>
       </div>
       <div className="col-75">
-        <input type="text" name={props.field} onChange={props.handleInputChange}/>
+        <input type="text" id={props.id} name={props.field} onChange={props.handleInputChange}/>
       </div>
     </div>
   )

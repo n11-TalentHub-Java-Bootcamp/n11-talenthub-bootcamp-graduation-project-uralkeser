@@ -8,7 +8,7 @@ const ApplicationForm = (props) =>{
       {
         props.formItems.map((element)=>{
           return (
-            <FormItem key={element} field={element} handleInputChange={props.onChange} />
+            <FormItem key={element.tr} field={element.tr} id={element.eng} handleInputChange={props.onChange} />
           )
         })
       }
