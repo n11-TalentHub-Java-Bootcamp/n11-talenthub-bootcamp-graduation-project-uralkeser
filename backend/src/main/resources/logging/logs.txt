@@ -45,4 +45,136 @@
 ""2022-01-30 08:46:09 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 ""2022-01-30 08:46:09 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 ""2022-01-30 08:46:10 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-01-30 20:15:21 [restartedMain] INFO  c.l.LoanapplicationApplication - Starting LoanapplicationApplication using Java 11.0.12 on DESKTOP-OV56V36 with PID 8520 (C:\DEV\java bootcamp\final_project\n11-talenthub-bootcamp-graduation-project-uralkeser\backend\target\classes started by ural_ in C:\DEV\java bootcamp\final_project\n11-talenthub-bootcamp-graduation-project-uralkeser\backend)
+""2022-01-30 20:15:21 [restartedMain] INFO  c.l.LoanapplicationApplication - No active profile set, falling back to default profiles: default
+""2022-01-30 20:15:23 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-01-30 20:15:23 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+""2022-01-30 20:15:23 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-01-30 20:15:23 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-01-30 20:15:23 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.4.Final
+""2022-01-30 20:15:23 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-01-30 20:15:23 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-01-30 20:15:23 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-01-30 20:15:23 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+""2022-01-30 20:15:24 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+""2022-01-30 20:15:24 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "loan_application" does not exist, skipping
+""2022-01-30 20:15:24 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+""2022-01-30 20:15:24 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "client" does not exist, skipping
+""2022-01-30 20:15:24 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+""2022-01-30 20:15:24 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "loan_application" does not exist, skipping
+""2022-01-30 20:15:24 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+""2022-01-30 20:15:24 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - sequence "hibernate_sequence" does not exist, skipping
+""2022-01-30 20:15:24 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-01-30 20:15:25 [restartedMain] INFO  c.l.LoanapplicationApplication - Started LoanapplicationApplication in 5.283 seconds (JVM running for 6.795)
+""2022-01-30 20:16:40 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-01-30 20:16:40 [http-nio-8080-exec-2] WARN  c.l.service.ClientService - retrieved credit score:1000
+""2022-01-30 20:16:40 [http-nio-8080-exec-2] ERROR c.l.e.CustomizedResponseEntityExceptionHandler - Handler dispatch failed; nested exception is java.lang.NoSuchMethodError: com.loanapplication.entity.Client.builder()Lcom/loanapplication/entity/Client$ClientBuilder;
+""2022-01-30 20:17:17 [http-nio-8080-exec-3] WARN  c.l.service.ClientService - retrieved credit score:1000
+""2022-01-30 20:17:17 [http-nio-8080-exec-3] ERROR c.l.e.CustomizedResponseEntityExceptionHandler - Handler dispatch failed; nested exception is java.lang.NoSuchMethodError: com.loanapplication.entity.Client.builder()Lcom/loanapplication/entity/Client$ClientBuilder;
+""2022-01-30 20:17:23 [SpringApplicationShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+""2022-01-30 20:17:23 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-01-30 20:17:23 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-01-30 20:17:35 [restartedMain] INFO  c.l.LoanapplicationApplication - Starting LoanapplicationApplication using Java 11.0.12 on DESKTOP-OV56V36 with PID 26584 (C:\DEV\java bootcamp\final_project\n11-talenthub-bootcamp-graduation-project-uralkeser\backend\target\classes started by ural_ in C:\DEV\java bootcamp\final_project\n11-talenthub-bootcamp-graduation-project-uralkeser\backend)
+""2022-01-30 20:17:35 [restartedMain] INFO  c.l.LoanapplicationApplication - No active profile set, falling back to default profiles: default
+""2022-01-30 20:17:36 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-01-30 20:17:36 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+""2022-01-30 20:17:37 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-01-30 20:17:37 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-01-30 20:17:37 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.4.Final
+""2022-01-30 20:17:37 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-01-30 20:17:37 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-01-30 20:17:37 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-01-30 20:17:37 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+""2022-01-30 20:17:38 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+""2022-01-30 20:17:38 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - relation "loan_application" does not exist, skipping
+""2022-01-30 20:17:38 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+""2022-01-30 20:17:38 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "client" does not exist, skipping
+""2022-01-30 20:17:38 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+""2022-01-30 20:17:38 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - table "loan_application" does not exist, skipping
+""2022-01-30 20:17:38 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+""2022-01-30 20:17:38 [restartedMain] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - sequence "hibernate_sequence" does not exist, skipping
+""2022-01-30 20:17:38 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-01-30 20:17:40 [restartedMain] INFO  c.l.LoanapplicationApplication - Started LoanapplicationApplication in 5.335 seconds (JVM running for 7.537)
+""2022-01-30 20:17:48 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-01-30 20:17:48 [http-nio-8080-exec-1] WARN  c.l.service.ClientService - retrieved credit score:1000
+""2022-01-30 20:17:48 [http-nio-8080-exec-1] WARN  c.l.service.ClientService - Deneme Deneme inserted into database
+""2022-01-30 20:17:48 [http-nio-8080-exec-1] WARN  c.l.l.LoanStatusScenario5 - applied loan application scenario is: 5
+""2022-01-30 20:17:48 [http-nio-8080-exec-1] INFO  c.l.service.ClientService - 
+Sayın Deneme Deneme kredi başvuru sonuç bilgileriniz:
+Onay durumu: onay
+Limit: 99000.00
+şeklinde oluşturulmuştur.
+""2022-01-30 20:19:51 [http-nio-8080-exec-3] WARN  c.l.service.ClientService - retrieved credit score:600
+""2022-01-30 20:19:51 [http-nio-8080-exec-3] WARN  c.l.service.ClientService - Ural Keser inserted into database
+""2022-01-30 20:19:51 [http-nio-8080-exec-3] WARN  c.l.l.LoanStatusScenario3 - applied loan application scenario is: 3
+""2022-01-30 20:19:51 [http-nio-8080-exec-3] INFO  c.l.service.ClientService - 
+Sayın Ural Keser kredi başvuru sonuç bilgileriniz:
+Onay durumu: onay
+Limit: 20000
+şeklinde oluşturulmuştur.
+""2022-01-30 20:22:54 [http-nio-8080-exec-5] WARN  c.l.service.ClientService - retrieved credit score:1000
+""2022-01-30 20:22:54 [http-nio-8080-exec-5] WARN  c.l.service.ClientService - ural keserrrr inserted into database
+""2022-01-30 20:22:54 [http-nio-8080-exec-5] WARN  c.l.l.LoanStatusScenario5 - applied loan application scenario is: 5
+""2022-01-30 20:22:54 [http-nio-8080-exec-5] INFO  c.l.service.ClientService - 
+Sayın ural keserrrr kredi başvuru sonuç bilgileriniz:
+Onay durumu: onay
+Limit: 208000
+şeklinde oluşturulmuştur.
+""2022-01-30 20:49:04 [http-nio-8080-exec-8] WARN  c.l.service.ClientService - retrieved credit score:850
+""2022-01-30 20:49:04 [http-nio-8080-exec-8] WARN  c.l.service.ClientService - ural keser inserted into database
+""2022-01-30 20:49:04 [http-nio-8080-exec-8] WARN  c.l.l.LoanStatusScenario4 - applied loan application scenario is: 4
+""2022-01-30 20:49:04 [http-nio-8080-exec-8] INFO  c.l.service.ClientService - 
+Sayın ural keser kredi başvuru sonuç bilgileriniz:
+Onay durumu: onay
+Limit: 36000
+şeklinde oluşturulmuştur.
+""2022-01-30 21:03:57 [http-nio-8080-exec-10] WARN  c.l.service.ClientService - retrieved credit score:600
+""2022-01-30 21:03:57 [http-nio-8080-exec-10] WARN  c.l.service.ClientService - Deneme inserted into database
+""2022-01-30 21:03:57 [http-nio-8080-exec-10] WARN  c.l.l.LoanStatusScenario3 - applied loan application scenario is: 3
+""2022-01-30 21:03:57 [http-nio-8080-exec-10] INFO  c.l.service.ClientService - 
+Sayın Deneme kredi başvuru sonuç bilgileriniz:
+Onay durumu: onay
+Limit: 20600.00
+şeklinde oluşturulmuştur.
+""2022-01-30 21:15:57 [http-nio-8080-exec-4] WARN  c.l.service.ClientService - retrieved credit score:0
+""2022-01-30 21:15:57 [http-nio-8080-exec-4] WARN  c.l.service.ClientService - Deneme Deneme inserted into database
+""2022-01-30 21:15:57 [http-nio-8080-exec-4] WARN  c.l.l.LoanStatusScenario1 - applied loan application scenario is: 1
+""2022-01-30 21:15:57 [http-nio-8080-exec-4] INFO  c.l.service.ClientService - 
+Sayın Deneme Deneme kredi başvuru sonuç bilgileriniz:
+Onay durumu: red
+Limit: 0
+şeklinde oluşturulmuştur.
+""2022-01-30 21:20:56 [http-nio-8080-exec-2] INFO  c.l.service.ValidationService - the client does not have approved loan
+""2022-01-30 21:20:56 [http-nio-8080-exec-2] WARN  c.l.service.ClientService - retrieved credit score:0
+""2022-01-30 21:20:56 [http-nio-8080-exec-2] WARN  c.l.service.ClientService - Deneme Deneme updated in database.
+""2022-01-30 21:20:56 [http-nio-8080-exec-2] WARN  c.l.l.LoanStatusScenario1 - applied loan application scenario is: 1
+""2022-01-30 21:20:56 [http-nio-8080-exec-2] INFO  c.l.service.ClientService - 
+Sayın Deneme Deneme kredi başvuru sonuç bilgileriniz:
+Onay durumu: red
+Limit: 0
+şeklinde oluşturulmuştur.
+""2022-01-30 21:22:35 [http-nio-8080-exec-4] INFO  c.l.service.ValidationService - the client does not have approved loan
+""2022-01-30 21:22:35 [http-nio-8080-exec-4] WARN  c.l.service.ClientService - retrieved credit score:0
+""2022-01-30 21:22:35 [http-nio-8080-exec-4] WARN  c.l.service.ClientService - Deneme Deneme updated in database.
+""2022-01-30 21:22:35 [http-nio-8080-exec-4] WARN  c.l.l.LoanStatusScenario1 - applied loan application scenario is: 1
+""2022-01-30 21:22:35 [http-nio-8080-exec-4] INFO  c.l.service.ClientService - 
+Sayın Deneme Deneme kredi başvuru sonuç bilgileriniz:
+Onay durumu: red
+Limit: 0
+şeklinde oluşturulmuştur.
+""2022-01-30 21:40:44 [http-nio-8080-exec-7] ERROR c.l.e.CustomizedResponseEntityExceptionHandler - Client is already exist 
+""2022-01-30 21:42:55 [http-nio-8080-exec-9] WARN  c.l.service.ClientService - call get all loan applications service by ssn:12568536779 and 1980-12-12
+""2022-01-30 21:45:25 [http-nio-8080-exec-1] WARN  c.l.service.ClientService - call get all loan applications service by ssn:12568536779 and 1980-12-12
+""2022-01-30 21:48:11 [http-nio-8080-exec-3] WARN  c.l.service.ClientService - call get all loan applications service by ssn:12568536779 and 1980-12-12
+""2022-01-30 21:50:10 [http-nio-8080-exec-5] WARN  c.l.service.ClientService - call get all loan applications service by ssn:12568536779 and 1990-12-03
+""2022-01-30 21:50:10 [http-nio-8080-exec-5] ERROR c.l.e.CustomizedResponseEntityExceptionHandler - Cannot found client by given info.
+""2022-01-30 21:50:22 [http-nio-8080-exec-6] WARN  c.l.service.ClientService - call get all loan applications service by ssn:12568536779 and 1980-12-12
+""2022-01-30 21:51:50 [http-nio-8080-exec-8] WARN  c.l.service.ClientService - retrieved credit score:0
+""2022-01-30 21:51:50 [http-nio-8080-exec-8] WARN  c.l.service.ClientService - ural keser inserted into database
+""2022-01-30 21:51:50 [http-nio-8080-exec-8] WARN  c.l.l.LoanStatusScenario1 - applied loan application scenario is: 1
+""2022-01-30 21:51:50 [http-nio-8080-exec-8] INFO  c.l.service.ClientService - 
+Sayın ural keser kredi başvuru sonuç bilgileriniz:
+Onay durumu: red
+Limit: 0
+şeklinde oluşturulmuştur.
 "

@@ -3,25 +3,28 @@
   color: #333;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 #navbar-buttons{
   display: flex;
   flex-direction: row;
   background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#navbar button{
+a{
   border: none;
   background: none;
   color: #333;
   text-decoration: none;
   font-size: 18px;
   font-weight: bolder;
+  padding-left: 5%;
 }
 
-#navbar button:hover {
+a:hover {
   text-decoration: underline;
   color: #ea222f;
 }
