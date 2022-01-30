@@ -177,4 +177,5 @@ Sayın ural keser kredi başvuru sonuç bilgileriniz:
 Onay durumu: red
 Limit: 0
 şeklinde oluşturulmuştur.
+""2022-01-30 21:53:44 [http-nio-8080-exec-1] WARN  c.l.service.ClientService - call get all loan applications service by ssn:12568536779 and 1980-12-12
 "
