@@ -62,4 +62,4 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 Osman Ural Keser - [@linkedin](https://www.linkedin.com/in/osmanuralkeser/)  
 Gmail: osmanuralkeser@gmail.com
 
-Project Link: [https://github.com/n11-TalentHub-Java-Bootcamp/n11-talenthub-bootcamp-graduation-project-uralkeser](https://github.com/n11-TalentHub-Java-Bootcamp/n11-talenthub-bootcamp-graduation-project-OyaEr) 
+Project Link: [https://github.com/n11-TalentHub-Java-Bootcamp/n11-talenthub-bootcamp-graduation-project-uralkeser](https://github.com/n11-TalentHub-Java-Bootcamp/n11-talenthub-bootcamp-graduation-project-uralkeser) 
